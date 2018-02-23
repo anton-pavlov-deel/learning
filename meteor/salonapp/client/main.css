@@ -1,0 +1,48 @@
+/* CSS declarations go here */
+
+body {
+  position: absolute;
+  background-image: linear-gradient(to bottom, #afa, #eee 100%);
+  background-attachment: fixed;
+  margin: 0px 0px 0px 0px;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+
+#logo-bar-div {
+  border: 2px solid black;
+}
+
+#logo-bar-div img {
+  width: 200px;
+  height: 80px;
+}
+
+#filterable-note-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+#filterable-note-table th {
+  background-color: #9f9;
+}
+
+#filterable-note-table td, #filterable-note-table th{
+  border: 1px solid black;
+  margin: 0px 0px 0px 0px;
+  overflow: auto;
+}
+
+#search-bar-div {
+  border: 1px solid black;
+  margin-left: 20%;
+  margin-right: 60%;
+  padding: 0px 0px 15px 5px;
+}
+
+#search-bar-div input {
+  width: 95%;
+  height: 100%;
+}

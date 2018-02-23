@@ -1,0 +1,32 @@
+/* CSS declarations go here */
+body {
+  padding: 5px;
+}
+
+.container {
+  background-image: linear-gradient(to bottom, #99f, #eee 100%);
+  position: absolute;
+}
+
+.container form {
+  margin: 20px 50px 20px 50px;
+}
+
+.container table, .container td, .container th {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 50px 50px 50px 50px;
+}
+
+.container table {
+  background-color: #77d;
+}
+
+.container table tbody th {
+  background-image: linear-gradient(to bottom, #99f, #fff 100%);
+}
+
+.container table thead th,
+.container table tbody td {
+  background-image: linear-gradient(to bottom, #aaa, #ccc 100%);
+}
