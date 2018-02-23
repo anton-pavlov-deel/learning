@@ -2,14 +2,35 @@ import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+import ToolBar from './ToolBar.js'
+
 export default class FilterableNoteTable extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      filterService: '',
+      filterProvidedBy: '',
+      filterProvidedTo: '',
+      filterClearPrice: '',
+      filterPrice: '',
+      filterDate: ''
+    }
+  }
+
+  handleFilterChange(target) {
+    this.setState({
+      [target.name]: target.value
+    })
+  }
+
   render() {
-    const filterService = this.props.filterService;
-    const filterProvidedBy = this.props.filterProvidedBy;
-    const filterProvidedTo = this.props.filterProvidedTo;
-    const filterClearPrice = this.props.filterClearPrice;
-    const filterPrice = this.props.filterPrice;
-    const filterDate = this.props.filterDate;
+    const filterService = this.state.filterService;
+    const filterProvidedBy = this.state.filterProvidedBy;
+    const filterProvidedTo = this.state.filterProvidedTo;
+    const filterClearPrice = this.state.filterClearPrice;
+    const filterPrice = this.state.filterPrice;
+    const filterDate = this.state.filterDate;
     const notes = this.props.notes;
     const rows = [];
 
@@ -38,21 +59,25 @@ export default class FilterableNoteTable extends Component {
     });
 
     return (
-      <table id='filterable-note-table' cellSpacing='0'>
-        <thead>
-          <tr>
-            <th>Service</th>
-            <th>Provided by</th>
-            <th>Provided to</th>
-            <th>Clear price</th>
-            <th>Price</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows}
-        </tbody>
-      </table>
+      <div id='filterable-note-table-div'>
+        <ToolBar onFilterChange={this.handleFilterChange.bind(this)}/>
+        <table id='filterable-note-table' cellSpacing='0'>
+          <thead>
+            <tr>
+              <th style={{width: '1%', cursor: 'pointer'}}></th>
+              <th>Service</th>
+              <th>Provided by</th>
+              <th>Provided to</th>
+              <th>Clear price</th>
+              <th>Price</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows}
+          </tbody>
+        </table>
+      </div>
     );
   }
 }
@@ -61,7 +86,8 @@ export default class FilterableNoteTable extends Component {
 class NoteRow extends Component {
   render() {
     return (
-      <tr style={{cursor: 'pointer'}}>
+      <tr>
+        <td></td>
         <td>{this.props.note.service}</td>
         <td>{this.props.note.providedBy}</td>
         <td>{this.props.note.providedTo}</td>

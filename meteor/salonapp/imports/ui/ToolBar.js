@@ -17,6 +17,7 @@ export default class ToolBar extends Component {
 
 class SearchBar extends Component {
   handleFilterChange(event) {
+    console.log(event.target.value);
     this.props.onFilterChange(event.target);
   }
 

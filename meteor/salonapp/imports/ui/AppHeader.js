@@ -2,8 +2,6 @@ import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import ToolBar from './ToolBar.js';
-
 logo_path = '/home/antonpavlov/learning/meteor/salonapp/resources/logo.png';
 
 class LogoBar extends Component {
@@ -32,9 +30,6 @@ export default class AppHeader extends Component {
       <div id='app-header-div'>
         <LogoBar src={logo_path} />
         <AuthorizationBar />
-        <ToolBar
-          onFilterChange={this.props.onFilterChange}
-        />
       </div>
     );
   }
