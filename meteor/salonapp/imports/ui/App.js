@@ -1,11 +1,15 @@
 import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { withTracker } from 'meteor/react-meteor-data';
 
 import AppHeader from './AppHeader.js';
 import FilterableNoteTable from './FilterableNoteTable.js';
 
-export default class App extends Component {
+import { Notes } from '../api/notes.js';
+
+
+class App extends Component {
   constructor(props) {
     super(props);
 
@@ -41,3 +45,9 @@ export default class App extends Component {
     );
   }
 }
+
+export default withTracker(() => {
+  return {
+    notes: Notes.find({}).fetch()
+  };
+})(App);

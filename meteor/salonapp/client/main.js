@@ -5,7 +5,6 @@ import { render } from 'react-dom';
 import App from '../imports/ui/App.js';
 
 function FormatDate(date) {
-
   return `${date.toLocaleDateString()}-${date.toLocaleTimeString()}`;
 }
 
@@ -16,5 +15,5 @@ notes = [
 ];
 
 Meteor.startup(() => {
-  render(<App notes={notes}/>, document.getElementById('app-holder'));
+  render(<App />, document.getElementById('app-holder'));
 });
