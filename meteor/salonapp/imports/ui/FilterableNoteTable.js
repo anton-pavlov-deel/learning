@@ -61,7 +61,7 @@ export default class FilterableNoteTable extends Component {
 class NoteRow extends Component {
   render() {
     return (
-      <tr>
+      <tr style={{cursor: 'pointer'}}>
         <td>{this.props.note.service}</td>
         <td>{this.props.note.providedBy}</td>
         <td>{this.props.note.providedTo}</td>

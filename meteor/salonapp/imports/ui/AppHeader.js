@@ -32,7 +32,9 @@ export default class AppHeader extends Component {
       <div id='app-header-div'>
         <LogoBar src={logo_path} />
         <AuthorizationBar />
-        <ToolBar onFilterChange={this.props.onFilterChange}/>
+        <ToolBar
+          onFilterChange={this.props.onFilterChange}
+        />
       </div>
     );
   }

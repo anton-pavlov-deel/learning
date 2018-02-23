@@ -6,7 +6,9 @@ export default class ToolBar extends Component {
   render() {
     return (
       <div id='tool-bar-div'>
-        <SearchBar onFilterChange={this.props.onFilterChange}/>
+        <SearchBar
+          onFilterChange={this.props.onFilterChange}
+        />
         <AddNoteTool />
       </div>
     );
@@ -58,34 +60,74 @@ class SearchBar extends Component {
 }
 
 class AddNoteTool extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      service: '',
+      providedBy: '',
+      providedTo: '',
+      clearPrice: '',
+      price: '',
+      date: ''
+    };
+  }
+
+  handleChange(event) {
+
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+
+    date = new Date();
+
+    date = `${date.toLocaleDateString()}-${date.toLocaleTimeString()}`;
+
+    this.setState({
+      date: date
+    })
+
+    Meteor.call('notes.insert', this.state);
+  }
+
   render() {
     return (
-      <form id="add-note-tool-form">
+      <form id="add-note-tool-form" onSubmit={this.handleSubmit.bind(this)}>
         <h3>Add note tool</h3>
         <label>Service: <input
           type='text'
-          name='newService'
+          name='service'
+          onChange={this.handleChange.bind(this)}
+          required
         /></label><br />
         <label>Provided by: <input
           type='text'
-          name='newProvidedBy'
+          name='providedBy'
+          onChange={this.handleChange.bind(this)}
+          required
         /></label><br />
         <label>Provided to: <input
           type='text'
-          name='newProvidedTo'
+          name='providedTo'
+          onChange={this.handleChange.bind(this)}
+          required
         /></label><br />
         <label>Clear price: <input
           type='text'
-          name='newClearPrice'
+          name='clearPrice'
+          onChange={this.handleChange.bind(this)}
+          required
         /></label><br />
         <label>Price: <input
           type='text'
-          name='newPrice'
-        /></label><br />
-        <label>Date: <input
-          type='text'
-          name='newDate'
-        /></label>
+          name='price'
+          onChange={this.handleChange.bind(this)}
+          required
+        /></label><br /><br />
         <input type='submit' name='Submit' value='Add note'/>
       </form>
     );

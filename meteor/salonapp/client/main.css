@@ -1,6 +1,7 @@
 /* CSS declarations go here */
 
 body {
+  border: 1px solid #999;
   position: absolute;
   background-image: linear-gradient(to bottom, #afa, #eee 100%);
   background-attachment: fixed;
@@ -12,7 +13,7 @@ body {
 }
 
 #logo-bar-div {
-  border: 2px solid black;
+  border-bottom: 1px solid #999;
 }
 
 #logo-bar-div img {
@@ -38,6 +39,7 @@ body {
 #tool-bar-div {
   float: left;
   width: 100%;
+  border-bottom: 1px solid #999
 }
 
 #search-bar-div {
@@ -53,7 +55,7 @@ body {
 #add-note-tool-form {
   height: 100%;
   width: 20%;
-  border: 1px solid black;
+  border-right: 1px solid #999;
   padding: 0px 0px 15px 5px;
 }
 

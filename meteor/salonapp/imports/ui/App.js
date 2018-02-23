@@ -32,8 +32,10 @@ class App extends Component {
   render() {
     return (
       <div id={'app-div'}>
-        <AppHeader onFilterChange={this.handleFilterChange.bind(this)}/>
-        <hr />
+        <AppHeader
+          onFilterChange={this.handleFilterChange.bind(this)}
+        />
+
         <FilterableNoteTable
           notes={this.props.notes}
           filterService={this.state.filterService}
