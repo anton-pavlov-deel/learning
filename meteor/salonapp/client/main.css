@@ -35,14 +35,29 @@ body {
   overflow: auto;
 }
 
+#tool-bar-div {
+  float: left;
+  width: 100%;
+}
+
 #search-bar-div {
+  float: inherit;
+  height: 100%;
+}
+
+#add-note-tool-form {
+  float: inherit;
+}
+
+#search-bar-div,
+#add-note-tool-form {
+  height: 100%;
+  width: 20%;
   border: 1px solid black;
-  margin-left: 0%;
-  margin-right: 80%;
   padding: 0px 0px 15px 5px;
 }
 
-#search-bar-div input {
+#search-bar-div input,
+#add-note-tool-form input {
   width: 95%;
-  height: 100%;
 }
