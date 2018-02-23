@@ -17,6 +17,7 @@ class App extends Component {
       filterService: '',
       filterProvidedBy: '',
       filterProvidedTo: '',
+      filterClearPrice: '',
       filterPrice: '',
       filterDate: ''
     }
@@ -38,6 +39,7 @@ class App extends Component {
           filterService={this.state.filterService}
           filterProvidedBy={this.state.filterProvidedBy}
           filterProvidedTo={this.state.filterProvidedTo}
+          filterClearPrice={this.state.filterClearPrice}
           filterPrice={this.state.filterPrice}
           filterDate={this.state.filterDate}
         />

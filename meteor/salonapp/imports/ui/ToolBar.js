@@ -36,6 +36,11 @@ class SearchBar extends Component {
           name='filterProvidedTo'
           onChange={this.handleFilterChange.bind(this)}
         /></label><br />
+        <label>Clear price: <input
+          type='text'
+          name='filterClearPrice'
+          onChange={this.handleFilterChange.bind(this)}
+        /></label><br />
         <label>Price: <input
           type='text'
           name='filterPrice'

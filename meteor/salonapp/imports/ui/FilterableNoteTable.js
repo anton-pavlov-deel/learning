@@ -7,6 +7,7 @@ export default class FilterableNoteTable extends Component {
     const filterService = this.props.filterService;
     const filterProvidedBy = this.props.filterProvidedBy;
     const filterProvidedTo = this.props.filterProvidedTo;
+    const filterClearPrice = this.props.filterClearPrice;
     const filterPrice = this.props.filterPrice;
     const filterDate = this.props.filterDate;
     const notes = this.props.notes;
@@ -20,6 +21,9 @@ export default class FilterableNoteTable extends Component {
         return;
       }
       if (note.providedTo.indexOf(filterProvidedTo) === -1) {
+        return;
+      }
+      if (note.clearPrice.indexOf(filterClearPrice) === -1) {
         return;
       }
       if (note.price.indexOf(filterPrice) === -1) {
@@ -40,6 +44,7 @@ export default class FilterableNoteTable extends Component {
             <th>Service</th>
             <th>Provided by</th>
             <th>Provided to</th>
+            <th>Clear price</th>
             <th>Price</th>
             <th>Date</th>
           </tr>
@@ -60,6 +65,7 @@ class NoteRow extends Component {
         <td>{this.props.note.service}</td>
         <td>{this.props.note.providedBy}</td>
         <td>{this.props.note.providedTo}</td>
+        <td>{this.props.note.clearPrice}</td>
         <td>{this.props.note.price}</td>
         <td>{this.props.note.date}</td>
       </tr>
