@@ -1,0 +1,88 @@
+add_button_size = 15px
+
+button_style()
+  width add_button_size
+  height add_button_size
+  margin 0px 5px 5px 0px
+  &:focus
+    outline 0
+
+nooutline()
+  &:focus
+    outline 0
+
+body
+  font-family monospace
+  background-image linear-gradient(to top, #7d7, #fff 50%)
+  background-attachment fixed
+
+#app-div
+  height 100%
+
+#app-header-div
+  width 100%
+
+  & img
+    height 100px
+    width 300px
+
+#employee-info-panel-div
+  background-color #66ff6622
+  border 1px solid #66ff6644
+  width 20%
+  height 30%
+
+  & header
+    padding 1px 5px 1px 5px
+    position relative
+    background-color #cef
+    & input
+      button_style()
+
+  & select
+    color #777
+    font-size 15px
+    background-color transparent
+    border none
+    border-bottom 1px solid #66ff6644
+    width 100%
+
+  & table
+    width 100%
+
+#add-employee-window-div
+  position absolute
+  width 100%
+  height 100%
+  top 0px
+  left 0px
+  right 0px
+  bottom 0px
+  background-color #cccccc99
+  padding-top 200px
+  & div
+    width 30%
+    font-size 15px
+    background-color #66ffcccc
+    & header
+      text-align left
+      & input
+        button_style()
+        position absolute
+        right 5px
+        top 5px
+    & input[type=button]
+      background-color transparent
+      border 1px solid black
+      nooutline()
+      margin 5px
+    & input[type=text]
+      background-color transparent
+      border none
+      border-bottom 1px solid #555
+      nooutline()
+    & table
+      width 100%
+      & th
+        text-align left
+        padding-left 5px
